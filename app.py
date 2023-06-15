@@ -12,8 +12,9 @@ import pandas as pd
 
 from backend.database import (
     get_verse,
-    get_verses,
-    create_verse
+    create_verse,
+    get_random_verse,
+    search_verses
 )
 
 app = FastAPI()
@@ -41,19 +42,52 @@ def populate_database():
 populate_database()
 
 
-@app.post("/verses")
-async def create_verse_endpoint(verse: dict):
-    return create_verse(verse)
+@app.get("/v1/verses/random")
+def get_random_verse_endpoint():
+    # Code to fetch a random Bible verse
+    return get_random_verse()
+    
+@app.get("/v1/verses")
+def search_verses_endpoint(keyword: str):
+    # Code to search for verses based on a keyword
+    return search_verses(keyword)
+
+@app.get("/v1/verses/{book_name}/{chapter}/{verse}")
+def get_verse_endpoint(book: str, chapter: int, verse: int):
+    # Code to retrieve a specific verse by reference
+    return get_verse(book, chapter, verse)
+
+# @app.get("/v1/verses/{book}/{chapter}")
+# def get_verses(book: str, chapter: int):
+#     # Code to retrieve verses from a specific book and chapter
+#     # Return the verses in the desired format
+#     return ""
+
+# @app.get("/v1/verses/{book}/{chapter}")
+# def get_verses_range(book: str, chapter: int, start: int, end: int):
+#     # Code to retrieve a range of verses within a specific book and chapter
+#     # Return the verses in the desired format
+#     return ""
+    
+
+# @app.post("/verses")
+# async def create_verse_endpoint(verse: dict):
+#     return create_verse(verse)
 
 @app.get("/verses/{verse_id}")
 async def get_verse_endpoint(verse_id: int):
     return get_verse(verse_id)
 
 
+# # Close the database connection when the application shuts down
+# @app.on_event("shutdown")
+# def close_db_connection():
+#     conn.close()
+
 
 # Run the FastAPI application using uvicorn
 if __name__ == "__main__":
     # Automatically open the application in the browser
-    webbrowser.open("http://localhost:8000")
+    webbrowser.open("http://localhost:8000/docs")
 
     uvicorn.run(app, host="localhost", port=8000)
