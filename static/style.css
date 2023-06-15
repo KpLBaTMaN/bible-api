@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: url('/static/images/background.jpg');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Lato', sans-serif;
+    margin: 0 0 50px;
+}
+
+h2 {
+    color: #333333;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+footer {
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer i {
+    color: red;
+}
+
+footer a {
+    color: #3c97bf;
+    text-decoration: none;
+}
+
+
+
+/* Chat container */
+.chat-container {
+    width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #F4F4F4;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat log */
+.chat-log {
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #FFFFFF;
+}
+
+/* Chat input */
+.chat-input input[type="text"] {
+    width: 80%;
+    padding: 5px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.chat-input button {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Message styles */
+.message {
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.message span {
+    display: block;
+    padding: 10px;
+    border-radius: 3px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.user {
+    background-color: #F2F2F2;
+    color: #333333;
+}
+
+.processed {
+    background-color: #E5F3FF;
+    color: #333333;
+}
+
+.loading-message {
+    background-color: #FFFFFF;
+    text-align: center;
+    color: #777777;
+}
+
+.error-message {
+    background-color: #FFCDD2;
+    text-align: center;
+    color: #FF0000;
+}
