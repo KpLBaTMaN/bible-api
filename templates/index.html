@@ -1,26 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Chat API</title>
+    <title>Random Bible Verse</title>
     <link href="/static/style.css" rel="stylesheet">
-    <script src="/static/script.js"></script>
 </head>
 <body>
-    <div class="chat-container">
-        <h2>Chat</h2>
-        <div class="chat-log" id="chat-log">
-            <div class="message loading-message">
-                <!-- 
-                <span>Loading...</span> 
-                -->
-            </div>
-        </div>
-        <div class="chat-input">
-            <form id="chat-form">
-                <input type="text" id="user-input" placeholder="Type your message...">
-                <button type="submit">Send</button>
-            </form>
-        </div>
+    <div id="verse-container">
+        <h1>Random Bible Verse</h1>
+        <button id="get-verse-btn">Get Random Verse</button>
+        <p id="verse-text"></p>
     </div>
+    <script src="/static/script.js"></script>
 </body>
 </html>

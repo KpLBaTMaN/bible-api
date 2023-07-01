@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    {% if verses %}
+        <ol>
+            {% for verse in verses %}
+                <li>
+                    <h3>{{ verse.book_name }} {{ verse.chapter }}:{{ verse.verse }}</h3>
+                    <p>{{ verse.text }}</p>
+                </li>
+            {% endfor %}
+            </ol>
+    {% else %}
+        <p>No verses found.</p>
+    {% endif %}
+</body>
+</html>
